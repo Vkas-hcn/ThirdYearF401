@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!-- 分类头部 -->
+    <LinearLayout
+        android:id="@+id/categoryHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:gravity="center_vertical">
+
+        <!-- 分类图标 -->
+        <ImageView
+            android:id="@+id/ivCategoryIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_app_cache" />
+
+        <!-- 分类名称 -->
+        <TextView
+            android:id="@+id/tvCategoryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="App Cache"
+            android:textColor="#FF222222"
+            android:textSize="14sp"/>
+
+        <!-- 展开/折叠图标 -->
+        <ImageView
+            android:id="@+id/ivExpand"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/icon_expand_list" />
+
+        <!-- 分类大小 -->
+        <TextView
+            android:id="@+id/tvCategorySize"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:layout_height="wrap_content"
+            android:text="0MB"
+            android:textColor="#FF999999"
+            android:textSize="12sp"/>
+
+        <!-- 选中图标 -->
+        <ImageView
+            android:id="@+id/ivCategorySelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/icon_disheck" />
+    </LinearLayout>
+
+    <!-- 垃圾文件列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvJunkFiles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:visibility="visible"
+        tools:listitem="@layout/item_junk_file"
+        android:visibility="gone" />
+
+</LinearLayout>

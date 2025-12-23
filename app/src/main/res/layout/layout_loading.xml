@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/loadingLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/icon_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!-- Loading Icon with rotation animation -->
+    <ImageView
+        android:id="@+id/ivLoadingIcon"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:contentDescription="Loading"
+        android:src="@drawable/icon_load_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_load"
+        app:layout_constraintBottom_toBottomOf="@+id/ivLoadingIcon"
+        app:layout_constraintEnd_toEndOf="@+id/ivLoadingIcon"
+        app:layout_constraintStart_toStartOf="@+id/ivLoadingIcon"
+        app:layout_constraintTop_toTopOf="@+id/ivLoadingIcon">
+
+        <ImageView
+            android:id="@+id/img_load_logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_load_clean" />
+    </FrameLayout>
+
+    <!-- Scanning text -->
+    <TextView
+        android:id="@+id/tv_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Cleaning..."
+        android:textColor="#FF222222"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivLoadingIcon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
