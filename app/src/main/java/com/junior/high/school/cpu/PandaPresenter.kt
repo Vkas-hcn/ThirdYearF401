@@ -69,9 +69,9 @@ class PandaPresenter(private val dataProvider: PandaContract.DataProvider) : Pan
         view.appendCPUDetail("ABI", abi)
         view.appendCPUDetail("Supported ABI", abi)
         view.appendCPUDetail("OpenGL ES", openGL)
-        view.appendCPUDetail("CPU", abi)
-        view.appendCPUDetail("Extensions", "98")
-        view.appendCPUDetail("CPU", abi)
+        view.appendCPUDetail("GPU Renderer", "Adreno 650")
+        view.appendCPUDetail("Clock Speed", "2.84 GHz")
+        view.appendCPUDetail("Architecture", "ARMv8")
     }
 
     override fun onBackPressed() {

@@ -1,0 +1,12 @@
+// 这里面的信息都需要修改
+latego['com.junior.high.school', 'com.spaceman.zenbox',  # 包名
+               'zen.box.FourZo',# 透明activity
+               'mkk/deo/FellRe',  #  广播
+               '','com.junior.high.school.MidPage',  # 隐藏图标 other1","main2
+               'late/mod/a', '"a0"',  # jni路径及函数
+               '/kedmob',# 外弹文件开关名
+               '"jimite"',# 广播接收key
+               '"mkeiac"',  # 恢复
+               '"nerfeel"',  # 隐藏
+               '"kaskel"']  # 外弹
+

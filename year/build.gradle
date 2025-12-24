@@ -1,0 +1,76 @@
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+}
+
+android {
+    namespace 'com.re.sid.ual'
+    compileSdk 35
+
+    defaultConfig {
+        minSdk 26
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+}
+
+dependencies {
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+
+    // appsflyer start
+    api 'com.appsflyer:af-android-sdk:6.15.2'
+    api 'com.android.installreferrer:installreferrer:2.2'
+    api 'com.google.android.gms:play-services-base:18.0.1'
+    api 'com.google.android.gms:play-services-ads-identifier:18.0.1'
+    // appsflyer end
+
+    api("com.facebook.android:facebook-android-sdk:latest.release")
+    api(platform("com.google.firebase:firebase-bom:33.1.1"))
+    api("com.google.firebase:firebase-analytics")
+    api("com.google.firebase:firebase-crashlytics")
+    api("com.google.firebase:firebase-messaging")
+    implementation("com.google.firebase:firebase-config")
+
+
+    api "androidx.work:work-runtime-ktx:2.8.1"
+    api("com.github.megatronking.stringfog:xor:5.0.0")
+
+    // Retrofit
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    api 'com.squareup.retrofit2:converter-gson:2.9.0'
+    api 'com.squareup.retrofit2:converter-scalars:2.9.0'
+    api 'com.squareup.okhttp3:okhttp:4.11.0'
+    api 'com.squareup.okhttp3:logging-interceptor:4.11.0'
+
+    //pangle
+    implementation("com.pangle.global:pag-sdk-m:7.8.7.0")
+    implementation("com.pangle.global:bigo-adapter:5.5.1.1")
+    implementation("com.pangle.global:mintegral-adapter:16.9.71.4")
+    implementation("com.pangle.global:applovin-adapter:13.3.1.1")
+    implementation("com.pangle.global:vungle-adapter:7.5.1.1")
+
+    // DataStore
+    api "androidx.datastore:datastore-preferences:1.1.1"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3"
+}

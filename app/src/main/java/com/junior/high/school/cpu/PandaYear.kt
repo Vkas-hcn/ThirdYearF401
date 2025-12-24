@@ -69,8 +69,10 @@ class PandaYear : AppCompatActivity(), PandaContract.View {
 
     private fun configureLoadingUI() {
         val logoView = loadingLayoutView.findViewById<ImageView>(R.id.img_load_logo)
-        logoView.setImageResource(R.drawable.icon_cpu)
-        
+        logoView.setImageResource(R.drawable.icon_load_cpu)
+        binding.loadingLayout.imgBack.setOnClickListener {
+            presenter.onBackPressed()
+        }
         val tipsView = loadingLayoutView.findViewById<TextView>(R.id.tv_tips)
         tipsView.text = "Scanning..."
     }

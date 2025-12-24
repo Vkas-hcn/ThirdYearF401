@@ -66,8 +66,10 @@ class DeerYear : AppCompatActivity(), DeerContract.View {
 
     private fun setupLoadingUI() {
         val logoImageView = loadingLayoutView.findViewById<ImageView>(R.id.img_load_logo)
-        logoImageView.setImageResource(R.drawable.icon_device)
-        
+        logoImageView.setImageResource(R.drawable.icon_load_device)
+        binding.loadingLayout.imgBack.setOnClickListener {
+            presenter.handleBackAction()
+        }
         val tipsTextView = loadingLayoutView.findViewById<TextView>(R.id.tv_tips)
         tipsTextView.text = "Scanning..."
     }
