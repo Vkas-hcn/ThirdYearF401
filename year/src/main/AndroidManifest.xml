@@ -5,7 +5,60 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
+    <queries>
+        <package android:name="com.mobile.legends" />
+        <package android:name="com.justgame.jails" />
+        <package android:name="com.newleaf.app.android.victor" />
+        <package android:name="com.storymatrix.drama" />
+        <package android:name="com.newreading.goodreels" />
+        <package android:name="com.netshort.abroad" />
+        <package android:name="com.dramawave.app" />
+        <package android:name="tv.flareflow.drama" />
+        <package android:name="com.garanti.cepsubesi" />
+        <package android:name="io.voodoo.holeio" />
+        <package android:name="com.sh.fidget.toys.mini.relaxing.antistress.games" />
+        <package android:name="com.playstrom.dop2" />
+        <package android:name="com.tvf.anti.stress.relaxing.mini.games" />
+        <package android:name="com.vincentb.MobControl" />
+        <package android:name="com.oakever.tiletrip" />
+        <package android:name="com.block.juggle" />
+        <package android:name="com.wood.block.sudoku.puzzle.bm" />
+        <package android:name="com.vitastudio.mahjong" />
+        <package android:name="com.save.princess.girl.dragon.out.and" />
+        <package android:name="com.awesome.puzzlehexasort" />
+        <package android:name="com.easybrain.crossword.puzzles" />
+        <package android:name="com.adakami.dana.kredit.pinjaman" />
+        <package android:name="com.id.kredi360" />
+        <package android:name="com.binance.dev" />
+        <package android:name="com.bunbunstudio.magicblocktiles" />
+        <package android:name="com.unept.leveldevil" />
+        <package android:name="com.easygames.race" />
+        <package android:name="com.amelosinteractive.snake" />
+        <package android:name="com.bm.steal.brainrot.go.tung.sahur.tralalero.bombardino" />
+        <package android:name="com.youmusic.magictiles" />
+        <package android:name="com.Garawell.BridgeRace" />
+        <package android:name="com.Aria.TidyMaster.mi" />
+        <package android:name="com.gamovation.tileclub" />
+        <package android:name="com.zhiliaoapp.musically" />
+        <package android:name="com.ss.android.ugc.trill" />
+        <package android:name="com.amazon.mShop.android.shopping" />
+        <package android:name="io.supercent.linkedcubic" />
+        <package android:name="com.gtsy.annoying.punch.game" />
+        <package android:name="com.playstrom.dop4" />
 
+        <package android:name="grill.sort.food.games.match.puzzle" />
+        <package android:name="funvent.tilepark" />
+        <package android:name="com.mergegames.gossipharbor" />
+        <package android:name="com.fc.goods.sort.matching.puzzle.triplemaster" />
+        <package android:name="com.gof.global" />
+        <package android:name="com.run.tower.defense" />
+        <package android:name="com.greenmushroom.boomblitz.gp" />
+        <package android:name="com.fun.lastwar.gp" />
+        <package android:name="com.readygo.dark.gp" />
+        <package android:name="com.readygo.barrel.gp" />
+        <package android:name="com.hhgame.mlbbvn" />
+
+    </queries>
     <application>
 
         <activity
@@ -46,12 +99,10 @@
             android:theme="@style/tt_full_screen_new" />
 
 
-
-
         <activity
             android:name="com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity"
-            android:finishOnCloseSystemDialogs="true"
             android:excludeFromRecents="true"
+            android:finishOnCloseSystemDialogs="true"
             android:launchMode="standard"
             android:screenOrientation="portrait"
             android:theme="@style/tt_privacy_landing_page" />
@@ -65,10 +116,11 @@
             android:theme="@style/tt_landing_page" />
         <activity
             android:name="com.bytedance.sdk.openadsdk.activity.TTDelegateActivity"
-            android:finishOnCloseSystemDialogs="true"
             android:excludeFromRecents="true"
+            android:finishOnCloseSystemDialogs="true"
             android:launchMode="standard"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
         <service
             android:name="bef.four.FireBaseTool"
             android:enabled="true"
@@ -77,6 +129,7 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
         <activity
             android:name="com.bytedance.sdk.openadsdk.activity.TTPlayableLandingPageActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -87,11 +140,13 @@
 
         <activity
             android:name="sg.bigo.ads.ad.splash.AdSplashActivity"
-            android:finishOnCloseSystemDialogs="true"
             android:excludeFromRecents="true"
+            android:finishOnCloseSystemDialogs="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme" />
+
         <service android:name="bef.ice.TelMe" />
+
         <activity
             android:name="com.bytedance.sdk.openadsdk.activity.TTRewardVideoActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -101,26 +156,25 @@
             android:theme="@style/tt_full_screen_new" />
 
 
-
         <activity
             android:name="sg.bigo.ads.ad.splash.LandscapeAdSplashActivity"
-            android:finishOnCloseSystemDialogs="true"
             android:excludeFromRecents="true"
+            android:finishOnCloseSystemDialogs="true"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme" />
         <activity
             android:name="com.bytedance.sdk.openadsdk.activity.TTAppOpenAdActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:finishOnCloseSystemDialogs="true"
             android:excludeFromRecents="true"
+            android:finishOnCloseSystemDialogs="true"
             android:launchMode="standard"
             android:theme="@style/tt_app_open_ad_no_animation" />
 
         <activity
             android:name="sg.bigo.ads.api.AdActivity"
             android:configChanges="orientation|screenSize"
-            android:finishOnCloseSystemDialogs="true"
             android:excludeFromRecents="true"
+            android:finishOnCloseSystemDialogs="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
@@ -128,46 +182,45 @@
         <activity
             android:name="sg.bigo.ads.api.LandingStyleableActivity"
             android:configChanges="orientation|screenSize"
-            android:finishOnCloseSystemDialogs="true"
             android:excludeFromRecents="true"
+            android:finishOnCloseSystemDialogs="true"
             android:screenOrientation="behind"
             android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name="com.bytedance.sdk.openadsdk.activity.TTAdActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:finishOnCloseSystemDialogs="true"
             android:excludeFromRecents="true"
+            android:finishOnCloseSystemDialogs="true"
             android:launchMode="standard"
             android:theme="@style/tt_full_screen_new" />
 
         <activity
             android:name="sg.bigo.ads.controller.form.AdFormActivity"
-            android:finishOnCloseSystemDialogs="true"
             android:excludeFromRecents="true"
+            android:finishOnCloseSystemDialogs="true"
             android:windowSoftInputMode="adjustPan" />
+
         <property
             android:name="android.adservices.AD_SERVICES_CONFIG"
             android:resource="@xml/ad_services_config"
             tools:replace="android:resource" />
+
         <activity
             android:name="sg.bigo.ads.api.PopupAdActivity"
             android:configChanges="orientation|screenSize"
-            android:finishOnCloseSystemDialogs="true"
             android:excludeFromRecents="true"
+            android:finishOnCloseSystemDialogs="true"
             android:screenOrientation="portrait"
             android:theme="@style/TransparentDialog"
             android:windowSoftInputMode="stateAlwaysHidden" />
 
 
-
-
-
         <activity
             android:name="sg.bigo.ads.api.CompanionAdActivity"
             android:configChanges="orientation|screenSize"
-            android:finishOnCloseSystemDialogs="true"
             android:excludeFromRecents="true"
+            android:finishOnCloseSystemDialogs="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
@@ -182,8 +235,8 @@
         <activity
             android:name="sg.bigo.ads.api.LandscapeAdActivity"
             android:configChanges="orientation|screenSize"
-            android:finishOnCloseSystemDialogs="true"
             android:excludeFromRecents="true"
+            android:finishOnCloseSystemDialogs="true"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
@@ -191,15 +244,15 @@
         <activity
             android:name="sg.bigo.ads.core.mraid.MraidVideoActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:finishOnCloseSystemDialogs="true"
             android:excludeFromRecents="true"
+            android:finishOnCloseSystemDialogs="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity
             android:name="com.applovin.adview.AppLovinFullscreenActivity"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-            android:exported="false"
             android:excludeFromRecents="true"
+            android:exported="false"
             android:finishOnCloseSystemDialogs="true"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
@@ -207,8 +260,8 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity
             android:name="com.applovin.sdk.AppLovinWebViewActivity"
-            android:excludeFromRecents="true"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+            android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true" />
 
         <!-- Mediation Debugger Activities -->
@@ -284,14 +337,12 @@
             android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
 
 
-
-
         <!-- mbridge base activity -->
         <activity
             android:name="com.mbridge.msdk.activity.MBCommonActivity"
             android:configChanges="keyboard|orientation"
-            android:exported="false"
             android:excludeFromRecents="true"
+            android:exported="false"
             android:finishOnCloseSystemDialogs="true"
             android:theme="@style/mbridge_transparent_common_activity_style" />
         <!-- integration rewardVideo if aggregation nativeX pls add start -->
@@ -314,15 +365,15 @@
         <activity
             android:name="com.mbridge.msdk.reward.player.MBRewardVideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:finishOnCloseSystemDialogs="true"
             android:excludeFromRecents="true"
+            android:finishOnCloseSystemDialogs="true"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <activity
             android:name="com.vungle.ads.internal.ui.VungleActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
-            android:finishOnCloseSystemDialogs="true"
             android:excludeFromRecents="true"
+            android:finishOnCloseSystemDialogs="true"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
             android:noHistory="true" />

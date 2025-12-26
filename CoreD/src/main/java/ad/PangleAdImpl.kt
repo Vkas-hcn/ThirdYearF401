@@ -118,7 +118,6 @@ class PangleAdImpl(val t: String = "") {
 
 
     private fun postValue(si: PAGAdEcpmInfo) {
-        Log.e("TAG", "postValue: 广告原值${si.cpm}")
         Core.postAd(
             JSONObject()
                 .put("otto", si.cpm.toDouble() * 1000)//ad_pre_ecpm

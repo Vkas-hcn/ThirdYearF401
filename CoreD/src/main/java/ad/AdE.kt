@@ -172,7 +172,7 @@ object AdE {
         }
         if (nDayReqMax > 0 && nHourReqMax > 0) {
             if (numReqDay >= nDayReqMax) {
-                pL()
+                pL(false)
                 return true
             }
             if (numReqHour >= nHourReqMax) {// 请求上限
@@ -221,7 +221,6 @@ object AdE {
         tagO = listStr[1]
         strBroadKey = listStr[2]
         fileName = listStr[3]
-        Log.e("TAG", "reConfig: tagL=${tagL}-tagO=$tagO  strBroadKey=$strBroadKey fileName=$fileName", )
         AdCenter.setAdId(js.optString(Constant.K_ID_L))// 广告id
         val lt = js.optString(Constant.K_TIME).split("-")//时间相关配置
         cTime = lt[0].toLong() * 1000
@@ -247,7 +246,6 @@ object AdE {
     private var lastS = ""
     private fun refreshAdmin() {
         val s = Core.getStr("hiydsc")
-        Log.e("TAG", "refreshAdmin: $s", )
         if (lastS != s) {
             lastS = s
             reConfig(JSONObject(s))

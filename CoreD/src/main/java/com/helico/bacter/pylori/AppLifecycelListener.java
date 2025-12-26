@@ -25,7 +25,6 @@ public class AppLifecycelListener implements Application.ActivityLifecycleCallba
     @Override
     public void onActivityCreated(@NonNull Activity activity, @Nullable Bundle savedInstanceState) {
         String name = activity.getClass().getSimpleName();
-        Log.e("TAG", "onActivityCreated: "+name );
         if (name.equals(Constant.AC_NAME)) {
             AdCenter.showAd(activity);
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {

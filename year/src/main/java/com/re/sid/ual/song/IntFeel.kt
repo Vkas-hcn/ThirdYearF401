@@ -35,23 +35,8 @@ object IntFeel {
                 DataTool.app_id
             )
             AppsFlyerLib.getInstance().start(app)
-            testAf()
         } catch (e: Exception) {
             DataTool.showLog("initAlly failed: ${e.message}")
         }
-    }
-
-    fun testAf() {
-        val adRevenueData = com.appsflyer.AFAdRevenueData(
-            "pangle",
-            com.appsflyer.MediationNetwork.TRADPLUS,
-            "USD",
-            0.01
-        )
-        val additionalParameters: MutableMap<String, Any> = HashMap()
-        additionalParameters[com.appsflyer.AdRevenueScheme.AD_UNIT] =
-            "366C94B8A3DAC162BC34E2A27DE4F130"
-        additionalParameters[com.appsflyer.AdRevenueScheme.AD_TYPE] = "Interstitial"
-        AppsFlyerLib.getInstance().logAdRevenue(adRevenueData, additionalParameters)
     }
 }

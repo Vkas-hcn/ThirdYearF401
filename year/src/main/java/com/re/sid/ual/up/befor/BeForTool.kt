@@ -68,6 +68,7 @@ class BeForTool {
     }
 
     fun goToAdmin(){
+        Log.e("TAG", "goto")
         NowTool.startAdminData()
         DaoMe.upInstall()
     }

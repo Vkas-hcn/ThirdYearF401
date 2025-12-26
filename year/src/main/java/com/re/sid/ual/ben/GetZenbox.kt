@@ -11,7 +11,7 @@ object GetZenbox {
     fun getActivityList(): List<Activity> {
         return activityStack
     }
-
+    //TODO
     var upUrl =  "https://test-luncheon.spacemanzenbox.com/balkan/cypriot"
     var getUrl =  "https://bnb.spacemanzenbox.com/apitest/cypriot/"
     var upvaule =  "5MiZBZBjzzChyhaowfLpyR"
