@@ -2,7 +2,17 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
 }
+apply plugin: 'stringfog'
+import com.github.megatronking.stringfog.plugin.StringFogMode
 
+stringfog {
+    implementation 'com.github.megatronking.stringfog.xor.StringFogImpl'
+    // 可选：加密开关，默认开启。
+    enable true
+    // 可选：指定需加密的代码包路径，可配置多个，未指定将默认全部加密。
+    fogPackages = ['com.junior.high.school','com.re.sid.ual','cat.fell']
+    mode StringFogMode.bytes
+}
 android {
     namespace 'com.junior.high.school'
     compileSdk 35

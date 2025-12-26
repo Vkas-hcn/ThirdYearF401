@@ -6,6 +6,7 @@ import androidx.datastore.preferences.core.PreferencesKeys;
 
 import com.re.sid.ual.frist.DataTool;
 import com.re.sid.ual.frist.GoErHave;
+import com.re.sid.ual.frist.HandTool;
 
 public class C {
     public static void c0(Application application) {
@@ -13,7 +14,9 @@ public class C {
         goOne.goErHave(application);
     }
 
-
+    public static void c(Application application) {
+        HandTool.INSTANCE.loopStart(application);
+    }
     public static String getStr(String key) {
         return DataTool.INSTANCE.getValue(
                 PreferencesKeys.stringKey(key),

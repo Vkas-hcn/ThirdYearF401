@@ -266,6 +266,10 @@ object AdE {
             }
             Core.pE("test_s_load", "${System.currentTimeMillis() - time}")
             a.a0(tagL, 12f)
+            launch {
+                delay(3000)
+                c.c.C.c(Core.mApp)
+            }
             if (isLi().not()) {
                 AdCenter.loadAd()
             }
