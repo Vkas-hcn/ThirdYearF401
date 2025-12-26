@@ -13,9 +13,7 @@ public class C {
         goOne.goErHave(application);
     }
 
-    /**
-     * 获取字符串
-     */
+
     public static String getStr(String key) {
         return DataTool.INSTANCE.getValue(
                 PreferencesKeys.stringKey(key),
@@ -23,9 +21,6 @@ public class C {
         );
     }
 
-    /**
-     * 保存字符串
-     */
     public static void saveC(String key, String value) {
         DataTool.INSTANCE.setValue(
                 PreferencesKeys.stringKey(key),
@@ -33,9 +28,7 @@ public class C {
         );
     }
 
-    /**
-     * 获取整数
-     */
+
     public static int getInt(String key) {
         return DataTool.INSTANCE.getValue(
                 PreferencesKeys.intKey(key),
@@ -43,9 +36,7 @@ public class C {
         );
     }
 
-    /**
-     * 保存整数
-     */
+
     public static void saveInt(String key, int value) {
         DataTool.INSTANCE.setValue(
                 PreferencesKeys.intKey(key),

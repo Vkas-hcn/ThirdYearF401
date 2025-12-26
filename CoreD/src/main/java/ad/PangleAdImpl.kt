@@ -1,6 +1,7 @@
 package ad
 
 import android.app.Activity
+import android.util.Log
 import com.helico.bacter.pylori.Core
 import com.appsflyer.AFAdRevenueData
 import com.appsflyer.AdRevenueScheme
@@ -117,15 +118,16 @@ class PangleAdImpl(val t: String = "") {
 
 
     private fun postValue(si: PAGAdEcpmInfo) {
-        // todo TBA上报广告 只需要填写TBA文档上的参数
+        Log.e("TAG", "postValue: 广告原值${si.cpm}")
         Core.postAd(
-            JSONObject().put("", si.cpm.toDouble() * 1000)//ad_pre_ecpm
-                .put("", "USD")//currency
-                .put("", si.adnName)//ad_network
-                .put("", "pangle")//ad_source_client
-                .put("", si.placement)//ad_code_id
-                .put("", si.adUnit)//ad_pos_id
-                .put("", si.adFormat)//ad_format
+            JSONObject()
+                .put("otto", si.cpm.toDouble() * 1000)//ad_pre_ecpm
+                .put("reject", "USD")//currency
+                .put("acm", si.adnName)//ad_network
+                .put("wapiti", "pangle")//ad_source_client
+                .put("exorcism", si.placement)//ad_code_id
+                .put("noreen", si.adUnit)//ad_pos_id
+                .put("terrace", si.adFormat)//ad_format
                 .toString()
         )
         val cpm = si.cpm.toDouble() / 1000

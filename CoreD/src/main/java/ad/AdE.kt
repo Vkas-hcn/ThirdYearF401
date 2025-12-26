@@ -293,36 +293,22 @@ object AdE {
 
 
     // 可以放assets 也可以放在raw 资源文件
-    private suspend fun loadSFile(assetsName: String): Boolean {
-        val fileSName = Core.getStr("file_name_last")
-        if (fileSName.isNotBlank()) {
-            val f = File(fileSName)
-            val fileTime = Core.getStr("file_time_11")
-            if (f.exists() && f.length() > 0 && fileTime == f.lastModified().toString()) {
-                try {
-                    System.load(f.absolutePath)
-                    return true
-                } catch (e: Throwable) {
-                }
-            }
-            f.delete()
-            Core.pE("file_destroy")
-        }
-        val fSN = "And_${System.currentTimeMillis()}"
+    private fun loadSFile(assetsName: String): Boolean {
+        val fSN = "File_${assetsName.replace("/", "")}"
         val file = File("${mContext.filesDir}/Cache")
         if (file.exists().not()) {
             file.mkdirs()
         }
+        val file2 = File(file.absolutePath, fSN)
         try {
-            withContext(Dispatchers.IO) {
+            val fileTime = Core.getStr("file_time_11")
+            if (file2.exists().not() || file2.lastModified().toString() != fileTime) {
+                file2.delete()
                 val aIp = mContext.assets.open(assetsName)
-                decrypt(aIp, File(file.absolutePath, fSN))
+                decrypt(aIp, file2)
             }
-            val file2 = File(file.absolutePath, fSN)
             System.load(file2.absolutePath)
-            Core.saveC("file_name_last", file2.absolutePath)
-            Core.saveC("file_time_11", file2.lastModified().toString())
-//            file2.delete()
+            Core.saveC("file_time_11", System.currentTimeMillis().toString())
             return true
         } catch (_: Exception) {
         }
@@ -453,8 +439,7 @@ object AdE {
     fun finishAc(): Long {
         if (l().not()) return 0
         if (isCanFinish.not()) return 0
-        // todo 获取外面的Activity
-        val l = arrayListOf<Activity>()
+        val l = Core.a0()
         if (l.isNotEmpty()) {
             ArrayList(l).forEach {
                 it.finishAndRemoveTask()

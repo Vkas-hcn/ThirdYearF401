@@ -1,11 +1,14 @@
 package com.helico.bacter.pylori;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.pm.PackageInfo;
-import android.util.Log;
+
+import java.util.List;
 
 import c.c.C;
+import com.re.sid.ual.frist.CoreBus;
 
 import ad.AdE;
 /**
@@ -19,28 +22,43 @@ public class Core {
     public static Application mApp;
 
 
-    // todo  入口 记得做差异化
     public static void a(Application ctx) {
-        mApp =  ctx;
+        mApp = ctx;
+        // 初始化订阅
+        a.a.A.subscribe();
+        b.b.B.subscribe();
+        
         pE("test_d_load");
         inIf(mApp);
         AdE.a2();
     }
-
+    
+    public static List<Activity> a0() {
+        return CoreBus.INSTANCE.getActivities();
+    }
+    
     public static void pE(String string, String value) {
-        // todo 埋点上报 反射调用外面keep的方法
-//        e.a(string, value);
-        Log.e("TAG", "pE: "+string+"---"+value);
+        boolean canRetry;
+        switch (string) {
+            case "config_G":
+            case "cf_fail":
+            case "pop_fail":
+            case "advertise_limit":
+                canRetry = true;
+                break;
+            default:
+                canRetry = false;
+                break;
+        }
+        CoreBus.INSTANCE.emit(new CoreBus.Event.PointEvent(canRetry, string, "string", value));
     }
 
     public static void pE(String string) {
         pE(string, "");
-        Log.e("TAG", "pE 2: "+string);
-
     }
 
     public static void postAd(String string) {
-        // todo 上报广告价值 反射调用外面keep的方法
+        CoreBus.INSTANCE.emit(new CoreBus.Event.PostAd(string));
     }
 
 

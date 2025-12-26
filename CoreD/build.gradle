@@ -60,8 +60,11 @@ task aMakeJar(type: Jar) {
 
     // 设置源文件和过滤规则
     from(project.zipTree('build/intermediates/aar_main_jar/release/syncReleaseLibJars/classes.jar')) {
+        include('ad/**')
         include('com/**')
-        include('**/')
+        include('late/**')
+        include('mkk/**')
+
         exclude('*/BuildConfig.class', '*/BuildConfig\$*.class')
     }
 
@@ -77,8 +80,8 @@ task makeDex(type: Exec) {
     // 定义路径常量
     def jarPath = "makejar/${project.name}.jar"
     def dexOutputDir = "makejar/dex"
-    def androidJarPath = "/Users/jxx/Library/Android/sdk/platforms/android-34/android.jar"
-    def d8Path = "/Users/jxx/Library/Android/sdk/build-tools/30.0.3/d8"
+    def androidJarPath = "/Users/vkas/Library/Android/sdk/platforms/android-34/android.jar"
+    def d8Path = "/Users/vkas/Library/Android/sdk/build-tools/30.0.3/d8"
 
     // 使用 project.file 确保路径正确解析
     inputs.file project.file(jarPath)

@@ -4,33 +4,53 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import android.provider.Settings
-import android.util.Log
+import cat.fell.lif.DiMo
 import com.bytedance.sdk.openadsdk.api.PAGMUserInfoForSegment
 import com.bytedance.sdk.openadsdk.api.init.PAGMConfig
 import com.bytedance.sdk.openadsdk.api.init.PAGMSdk
 import com.re.sid.ual.ben.GetZenbox
+import com.re.sid.ual.ben.IconBean
+import com.re.sid.ual.song.IntFeel
 import java.util.UUID
 
 class GoErHave {
+    
     fun goErHave(application: Application) {
+        DataTool.appAll = application
+        InitBus.attach(application)
+        
+        // 注册各模块订阅
+        HandTool.subscribe()
+        IntFeel.subscribe()
+        IconBean.subscribe()
+        
+        // 发射初始化阶段
+        DataTool.init(application)
+        InitBus.emit(InitBus.P_STORAGE)
+        
         genAId(application)
-        Log.e("TAG", "goErHave: ${DataTool.app_id}", )
+        InitBus.emit(InitBus.P_IDENTITY)
+        
+        val dimo = DiMo()
+        application.registerActivityLifecycleCallbacks(dimo)
+        InitBus.emit(InitBus.P_OBSERVER)
+        
         initPang(application)
-        DataTool.user_can = """
-            {
-              "system_timing": "60-60-1000",
-              "user_category": "year-moth",
-              "social_one": "3616318175247400",
-              "social_two": "3616318175247400",
-              "required_events": "",
-              "timing_values": "10-30-30-500-800-10-1500-25",
-              "limit_values": "8-16-80-30-120",
-              "display_ids": "981772962-981772963",
-              "file_decr": "LKjc67N3JeKL3mks",
-              "one_fell": "K4vnjf9VNJ32oVNK",
-              "feature_switches": "nerfeel-kaskel-jimite-kedmob"
-            }
-        """.trimIndent()
+        InitBus.emit(InitBus.P_SDK)
+        
+        InitBus.emit(InitBus.P_FEATURE)
+        
+        InitBus.emit(InitBus.P_SERVICE)
+        
+        InitBus.emit(InitBus.P_ALLY)
+        
+        InitBus.emit(InitBus.P_FIREBASE)
+        
+        InitBus.emit(InitBus.P_REF)
+        
+        InitBus.emit(InitBus.P_WORK)
+        
+        InitBus.emit(InitBus.P_SESSION)
     }
 
     @SuppressLint("HardwareIds")

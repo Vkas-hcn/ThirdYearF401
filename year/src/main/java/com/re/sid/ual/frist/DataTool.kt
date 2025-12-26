@@ -1,5 +1,6 @@
 package com.re.sid.ual.frist
 
+import android.app.Application
 import android.content.Context
 import android.util.Log
 import androidx.datastore.core.DataStore
@@ -28,12 +29,29 @@ import kotlin.reflect.KProperty
 
 
 object DataTool {
-
+    lateinit var appAll: Application
     var app_id by string("mkceniv", "")
     var user_can by string("hiydsc", "")
     var ref_can by string("ewxvfe", "")
 
+    var ref_can_ts by string("ffgtrgg", "")
+
+    var ref_can_tss by string("cdttgyht", "")
+
+
     var have_ins by boolean("vfkrrooa", false)
+    var have_icon by boolean("ttimb", false)
+    
+    /** 缓存首次安装上报数据，确保重试时数据一致性 */
+    var install_json by string("install_json_cache", "")
+
+    var have_notifa by boolean("kktiex", false)
+
+    /** 今日Admin请求次数（持久化） */
+    var admin_request_count by int("admin_req_cnt", 0)
+
+    /** 今日日期标记（持久化，用于重置计数） */
+    var admin_request_date by int("admin_req_date", 0)
 
     fun showLog(msg: String){
         Log.e("Year", msg)
