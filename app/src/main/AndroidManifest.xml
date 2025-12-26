@@ -32,24 +32,8 @@
                     android:scheme="com.junior.high.school" />
             </intent-filter>
         </activity>
-        <activity-alias
-            android:name="com.junior.high.school.MidPage"
-            android:enabled="@string/uuid_5564A"
-            android:exported="true"
-            android:targetActivity=".gwec.FoxYear">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity-alias>
-        <activity
-            android:name=".zong.Kaiputung"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.INFO" />
-            </intent-filter>
-        </activity>
+
+
         <activity
             android:name=".mkvf.MonkeyYear"
             android:exported="true"
@@ -72,6 +56,14 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".zong.Kaiputung"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".device.DeerYear"
             android:exported="false"
             android:launchMode="singleTop"
@@ -81,6 +73,16 @@
             android:exported="false"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
+        <activity-alias
+            android:name="com.junior.high.school.MidPage"
+            android:enabled="@string/uuid_5564A"
+            android:exported="true"
+            android:targetActivity=".gwec.FoxYear">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
     </application>
 
 </manifest>

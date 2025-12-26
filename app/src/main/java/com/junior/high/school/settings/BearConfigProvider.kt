@@ -9,7 +9,7 @@ class BearConfigProvider(context: Context) : BearContract.ConfigProvider {
     private val contextRef: WeakReference<Context> = WeakReference(context)
 
     companion object {
-        private const val PRIVACY_POLICY_URL = "https://www.example.com/privacy-policy"
+        private const val PRIVACY_POLICY_URL = "https://sites.google.com/view/deep-cleank/home"
         private const val PLAY_STORE_BASE_URL = "https://play.google.com/store/apps/details?id="
     }
 
